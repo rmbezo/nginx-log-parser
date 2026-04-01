@@ -16,9 +16,9 @@ Output:
 ```
 Total lines: 120
 Status codes:
-200 -> 95
-404 -> 20
-500 -> 5
+2xx -> 95
+4xx -> 20
+5xx -> 5
 
 Top IPs:
 127.0.0.1 -> 30
@@ -29,3 +29,12 @@ Top paths:
 /api/users -> 15
 /favicon.ico -> 10
 ```
+
+
+
+Features:
+
+1. Show number of lines in log [X]
+2. Show top 3 messages (errors) that we have and count of appears [X]
+3. Show top IPs and count of appears in log []
+4. Show top paths and count of appears []
