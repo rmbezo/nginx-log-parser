@@ -105,7 +105,6 @@ func main() {
 
 
 
-
   //top := []int
 
   // Bubble sort 
@@ -120,13 +119,23 @@ func main() {
   //for i := range 4 {
   //   fmt.Println("Error
   // }
-  // 3. Show top IPs and count of appears in log []
 
+
+
+  // 3. Show top IPs and count of appears in log []
+ 
+
+
+  fmt.Println(" ")
+  topIPs := topIps(allLines)
+  fmt.Println(topIPs)
 
 
 
   // 4. Show top paths and count of appears []
-
+  fmt.Println(" ")
+  topPaths := topPaths(allLines)
+  fmt.Println(topPaths)
 }
 
 
@@ -154,5 +163,35 @@ func showErr(list map[int][]string) map[string]int {
   return map[string]int{"1xx": oneh, "2xx": twoh, "3xx": threeh, "4xx": fourh, "5xx": fiveh}
 }
 
-//func topIps(list map[int][]string) [string]int {
-//}
+func topIps(list map[int][]string) map[string]int {
+  remember := make(map[string]int)
+  for i := 0; i < len(list); i++ {
+    if len(list[i]) < 1 {
+      continue
+    }
+    if remember[list[i][0]] != 0 {
+        remember[list[i][0]] += 1
+    } else {
+        remember[list[i][0]] = 1
+    }
+}
+
+  return remember
+}
+
+
+func topPaths(list map[int][]string) map[string]int {
+  remember := make(map[string]int)
+  for i := 0; i < len(list); i++ {
+    if len(list[i]) < 1 {
+      continue
+    }
+    if remember[list[i][6]] != 0 {
+        remember[list[i][6]] += 1
+    } else {
+        remember[list[i][6]] = 1
+    }
+}
+
+  return remember
+}
